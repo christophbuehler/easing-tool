@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  margin-top: 32px;
+
+  mat-button-toggle-group {
+    border-radius: 0;
+
+    mat-button-toggle {
+      background: transparent;
+
+      &.mat-button-toggle-checked {
+        background: #333;
+      }
+    }
+  }
+
+  .code {
+    $code-pad: 8px;
+
+    // margin-top: 32px;
+    padding: $code-pad;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(#c2c2ff, .2); 
+    background: #333;
+
+    pre {}
+
+    .actions {
+      margin: 0 -$code-pad;
+      border-top: 1px solid rgba(#c2c2ff, .2);
+      margin-top: 8px;
+
+      >div {
+        padding: $code-pad;
+      }
+    }
+  }
+}

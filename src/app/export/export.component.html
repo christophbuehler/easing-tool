@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+  <mat-button-toggle-group [formControl]="langControl" aria-label="Font Style">
+    <mat-button-toggle value="css">CSS</mat-button-toggle>
+    <mat-button-toggle value="js">JavaScript</mat-button-toggle>
+    <mat-button-toggle value="ts">TypeScript</mat-button-toggle>
+    <mat-button-toggle value="python">Python</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+<div class="code" *ngIf="langControl.valueChanges | async">
+  <header fxLayout="row">
+    <!-- <h2 fxFlex>s</h2> -->
+    <span fxFlex></span>
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </header>
+  <pre><code [highlight]="(visibleCode | async)!"></code></pre>
+  <div class="actions">
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-button (click)="copy()" matTooltip="Copy code snippet to clipboard">
+        <mat-icon>content_copy</mat-icon>
+        copy
+      </button>
+    </div>
+  </div>
+</div>

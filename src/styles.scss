@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@use '~@angular/material'as mat;
+@import '~highlight.js/styles/github-dark.css';
+
+@include mat.core();
+
+// Dark theme
+$dark-primary: mat.define-palette(mat.$pink-palette);
+$dark-accent: mat.define-palette(mat.$blue-gray-palette);
+$dark-theme: mat.define-dark-theme((color: (primary: $dark-primary,
+      accent: $dark-accent,
+    )));
+
+// @include mat.core-theme($dark-theme);
+// @include mat.button-theme($dark-theme);
+@include mat.all-component-themes($dark-theme);
+
+body.light-theme {
+  // @include mat.core-color($light-theme);
+  // @include mat.button-color($light-theme);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #181818;
+}
